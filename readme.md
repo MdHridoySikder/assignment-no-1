@@ -1,165 +1,82 @@
-## WELCOME TO ( সহজ সরল সিম্পল ) ASSIGNMENT-005
+Answer the following questions clearly:
+What is the difference between *getElementById, getElementsByClassName, and querySelector / querySelectorAll*?
 
-### 📅 Deadline For 60 marks: 29th August, 2025 (11:59 pm ⏱️)
+Ans: There are many difference between getElementById, getElementByClassName and querySelector / querySelectorAll. Among them, getElementById is the simplest element. It returns a single element. On the other hand, getElementById, getElementByClassName and querySelector / querySelectorAll are more flexible using this selectors to find current elements
 
-### 📅 No Deadline For 50 marks
+getElementById: Purpose: getElementById selects a single elements by using unique id. Return: getElementById returns a single Element object. If there are no element with that, it returns Null. Usage: It helps our works faster and more simply. Example: const element = document.getElementById('our-id')
 
-### 📅 Deadline For 30 marks: Any time after 29th August.
+getElementsByClassName: Purpose: getElementsByClassName selects all elements with a specific class name. Return: It's a live HTML collection and return HTML Collection Usage: It's useful for selecting multiple elements by using specific class Example: const ClassName = document.getElementsByClassName(class)
 
----
+querySelector: Purpose: querySelector selects the first element in the document. Return: It returns the first element. If there are no found, it returns Null. Usage: More flexible for selecting elements using CSS selectors. Example: const selector = document.querySelector('querySelector').
 
-## ✅ Main Requirements (50 Marks)
+querySelectorAll: Purpose: querySelectorAll selects all elements that match a CSS selector. Return: It returns a static NodeList of all elements that match the specified selectors. Usage: Selecting multiple elements with complex CSS selectors.
 
-### 1. Navbar
+How do you create and insert a new element into the DOM?
 
-- **Website name & logo** on the left as Figma
-- **Heart icon, coin count (default-100), and Copy Count** on the right as Figma
+Ans:
 
----
+To create and insert a new element into the dom using JavaScript. We can follow these steps:
 
-### 2. Hero Section
+Step 1. Create the element:- To create a new HTML element. We can use the document.createElement().
 
-- **Background Gradient** in the Whole Section
-- **A Relevant Logo** at the top-center
-- **Section Title** in the center
-- **A Relevant Slogan** in the bottom Center
+Step 2. Set Attributes:- Customize the element by adding attributes, Id's, inner content or classes.
 
----
+Step 3. Insert into the dom:- Use methods like appendChlid() or append() to add the element to the desired location in the dom.
 
-### 2. Main Section
+What is Event Bubbling and how does it work? Ans: Event Bubbling is a term in the DOM where the event an element receives is bubbled to its parent, upward in the dom tree, until it gets to the root.
 
-This Section will have layout as figma
+How it works;
 
-<table border=1 width="100%" cellpadding="50">
-<tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
- </tr>
- <tr>
-    <td colspan=9 >Card Section</td>
-    <td colspan=3>History Section</td>
- </tr>
-</table>
+Event Triggering: The click event is triggered on the child element, initiating the event propagation.
 
-### Emergency Hotline Section
+Event Capturing: In the capturing phase, the event propagates from the root of thr DOM down to the target.
 
-- **Show Minimum 6 cards**. Each card will contain:
-  - Icon or Image
-  - Relevant Name
-  - Relevant Name in English
-  - Hotline number for calling
-  - Category Badge
-  - 💗 icon at left
-  - **2 buttons** at the bottom: Copy and Call with icons as Figma
+Event Bubbling: After reaching the target element, the event enters the bubbling phase, propagating back up through the DOM tree to the parent.
 
-### History Section
+Listener Behavioar: Event listener are attached to both parent and child elements using addEventListener.
 
-- **A white Background** in the whole section
-- **History Title with icon** at the top-left as Figma
-- **Clear History Button** at the top-right as Figma
+Execution Order: When the button is clicked, the child listener executes first (console.log("Child")), followed by the parent listener (console.log("Parent")) as the event bubbles up.
 
----
+Event Bubbling: Clicking the child triggers the event to propagate upward, activating listeners on the parent and grandparent.
 
-### 3. Responsiveness (5 Marks)
+Console Output: The order is "Child Clicked", "Parent Clicked", "Grandparent Clicked", showing the bubbling flow.
 
-- Website should be fully **responsive for mobile devices** (implementation up to you)
+Event Object: Each listener receives the event object e, which includes details like e.target and methods like e.stopPropagation().
 
----
+CSS Structure: Visual borders and sizes make the DOM hierarchy and event propagation clear.
 
-## Functionalities
+What is Event Delegation in JavaScript? Why is it useful?
 
-### 4. Heart Icons
+Ans:
 
-- Clicking on the 💗 **heart icon** of any card will increase the count in the Navbar
+Event Delegation is a pattern based upon the concept of Event Bubbling. It is and event-handling pattern that allows you handle event at a higher level in the DOM tree other the level where the event was first received.
 
----
+Why it's useful:
 
-### 5. Call Buttons
+Improves Performance: Attaching a single event listener to a parent is far more efficient than adding hundreds or thousands of individual listener. this saves memory and reduces the workload on the browser, leading to better performance.
 
-- On clicking a card's **Call Button**, following actions will happen:
-  - Show an **alert** with a message including the service name and number
-  - Each call will **cut 20 coins**. Reduce Coin after each click.
-  - If coins are less than 20, show a relevant alert and terminate the process.
-  - Add this service into the **Call History section** with:
-    - Service name
-    - Service number
+Simplifies Code: It makes our code cleaner and easier to manage. You don't have write loops to add listeners to every element.
 
----
+Handles Dynamic Content: It's particularly useful for elements that are added to the DOM after the page has loaded. Since the listener is on the parent, it automatically works for new child elements without needing to add a new listener every time you create a new element.
 
-### 5. Call History Section
+What is the difference between preventDefault() and stopPropagation() methods?
 
-- Show all called services with name & number. This will empty initially. when call button clicked it will filled dynamically.
-- A **Clear History button** on the right
-- Clicking this button will remove all data from call history
+Ans:
 
----
+The preventDefault() and stopPropagation() methods in JS are used to control event behavior but they serve different purposes. preventDefault() stops the default browser action for an event, while stopPropagation prevents the event from the bubbling up the dom tree.
 
-## Create Readme
+there are many difference of preventDefault() and stopPropagation() methods;
 
-You have to create a `Readme.md` file. and write down following questions. Dont Try to copy paste from AI Tools. Just write what you know about these. If you don't know , then search , learn , understand and then write.
+preventDefault()
+Purpose: Prevents the default browser action
 
-### 6. Answer the following questions clearly:
+Action: Stops form link navigation etc.
 
-1. What is the difference between **getElementById, getElementsByClassName, and querySelector / querySelectorAll**?
-2. How do you **create and insert a new element into the DOM**?
-3. What is **Event Bubbling** and how does it work?
-4. What is **Event Delegation** in JavaScript? Why is it useful?
-5. What is the difference between **preventDefault() and stopPropagation()** methods?
+Propagation: Does not effect event propagation.
 
----
+stopPropagation()
+Purpose: Stops event from bubbling up the DOM
 
-## 🧪 Challenges Part (10 Marks)
+Action: Stops the event from reaching parent elements.
 
-- On clicking the **Copy button**, show an alert and **increase the copy count** (3 Marks)
-
-- Hotline number will be **copied on click** so it can be pasted anywhere (4 Marks)
-
-💡Hint: You can ask for Help from `ChatGPT` Mamma . Just copy the below prompt , generate answer. use it with your own way.
-
-```bash
-I have a card with some text and a button inside it. I want that when a user clicks the button, some specific text from the card is copied to the clipboard using JavaScript. Please provide the code and explain it step by step.
-```
-
-- After clicking on the **Call button**, the **exact time of the call** will be shown in the Call History section (3 Marks)
-
-💡Hint: Search Google with that below question
-
-```bash
-How to get current local time in js
-```
-
----
-
-## ⚙️ Technology Stack
-
-- HTML
-- CSS ( Vanilla , Tailwind CSS , DaisyUI , Others - wheatever you like )
-- JavaScript ( Vanilla only. No Framework / Library Allowed )
-
----
-
-## 📌 Rules
-
-- ✅ Minimum **5 meaningful commits** required
-- ❌ No Lorem Ipsum or dummy placeholder text. Use **relevant content only**
-
----
-
-## 🔗 What to Submit
-
-- 📂 **GitHub Repository**
-- 🌐 **Live Link**
-
----
-
-# Let's Code and Achieve your Dream 🎯
+Propagation: Stops event propagation.
